@@ -77,12 +77,6 @@ NSString *const JXCRequestValidationErrorDomain = @"com.jxssy.network.framework.
     self.failureCompletionBlock = nil;
 }
 
-//- (void)addAccessory:(id<JXCRequestAccessory>)accessory {
-//    if (!self.requestAccessories) {
-//        self.requestAccessories = [NSMutableArray array];
-//    }
-//    [self.requestAccessories addObject:accessory];
-//}
 
 #pragma mark - Request Action
 

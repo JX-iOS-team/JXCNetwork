@@ -41,8 +41,8 @@
 
 
 #pragma mark - public methods
-- (JXCNetworkDispatcherService<JXCNetworkDispatcherServiceProtocol> *)serviceWithIdentifier:(NSString *)identifier{
-    NSAssert(self.dataSource, @"必须提供dataSource绑定并实现servicesKindsOfServiceManager方法，否则无法正常使用Service模块");
+- (JXCNetworkDispatcherService<JXCNetworkDispatcherServiceDelegate> *)serviceWithIdentifier:(NSString *)identifier{
+    NSAssert(self.managerDelegate, @"必须提供managerDelegate绑定并实现servicesKindsOfServiceManager方法，否则无法正常使用Service模块");
     
     if (self.serviceList[identifier] == nil) {
         self.serviceList[identifier] = [self newServiceWithIdentifier:identifier];
@@ -52,18 +52,18 @@
 
 #pragma mark - private methods
 
-- (JXCNetworkDispatcherService<JXCNetworkDispatcherServiceProtocol> *)newServiceWithIdentifier:(NSString *)identifier
+- (JXCNetworkDispatcherService<JXCNetworkDispatcherServiceDelegate> *)newServiceWithIdentifier:(NSString *)identifier
 {
-    NSAssert([self.dataSource respondsToSelector:@selector(servicesKindsOfServiceManager)], @"请实现JXCNetworkDispatcherManagerDataSource的servicesKindsOfServiceManager方法");
+    NSAssert([self.managerDelegate respondsToSelector:@selector(servicesKindsOfServiceManager)], @"请实现 JXCNetworkDispatcherManagerDelegate 的 servicesKindsOfServiceManager 方法");
     
-    if ([[self.dataSource servicesKindsOfServiceManager]valueForKey:identifier]) {
-        NSString *classStr = [[self.dataSource servicesKindsOfServiceManager]valueForKey:identifier];
+    if ([[self.managerDelegate servicesKindsOfServiceManager]valueForKey:identifier]) {
+        NSString *classStr = [[self.managerDelegate servicesKindsOfServiceManager]valueForKey:identifier];
         id service = [[NSClassFromString(classStr) alloc]init];
-        NSAssert(service, [NSString stringWithFormat:@"无法创建service，请检查servicesKindsOfServiceManager提供的数据是否正确"],service);
-        NSAssert([service conformsToProtocol:@protocol(JXCNetworkDispatcherServiceProtocol)], @"你提供的Service没有遵循JXCNetworkDispatcherServiceProtocol");
+        NSAssert(service, [NSString stringWithFormat:@"无法创建 service，请检查 servicesKindsOfServiceManager 提供的数据是否正确"],service);
+        NSAssert([service conformsToProtocol:@protocol(JXCNetworkDispatcherServiceDelegate)], @"你提供的 Service 没有遵循 JXCNetworkDispatcherServiceDelegate");
         return service;
     }else {
-        NSAssert(NO, @"servicesKindsOfServiceManager中无法找不到相匹配identifier");
+        NSAssert(NO, @" servicesKindsOfServiceManager 中无法找不到相匹配 identifier ");
     }
     
     return nil;

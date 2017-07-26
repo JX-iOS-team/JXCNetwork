@@ -26,7 +26,6 @@
 @implementation JXCNetworkProxy{
     
     AFHTTPSessionManager *_sessionManager;
-    //JXCNetworkConfig *_config;
     AFJSONResponseSerializer *_jsonResponseSerializer;
     AFXMLParserResponseSerializer *_xmlParserResponseSerialzier;
     NSMutableDictionary<NSNumber *, JXCBaseRequest *> *_requestsRecord;
@@ -50,8 +49,6 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        //_config = [JXCNetworkConfig sharedConfig];
-        //_manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:_config.sessionConfiguration];
         _requestsRecord = [NSMutableDictionary dictionary];
         _processingQueue = dispatch_queue_create("com.jxssy.networkproxy.processing", DISPATCH_QUEUE_CONCURRENT);
         _allStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(100, 500)];
@@ -230,7 +227,6 @@
     }
     
     // Retain request
-    //JXCLog(@"Add request: %@", NSStringFromClass([request class]));
     [self addRequestToRecord:request];
     [request.requestTask resume];
 }
@@ -350,7 +346,7 @@
         [request requestCompletePreprocessor];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        //[request toggleAccessoriesWillStopCallBack];
+
         [request requestCompleteFilter];
         
         if (request.delegate != nil) {
@@ -359,19 +355,17 @@
         if (request.successCompletionBlock) {
             request.successCompletionBlock(request);
         }
-        //[request toggleAccessoriesDidStopCallBack];
+
     });
 }
 
 - (void)requestDidFailWithRequest:(JXCBaseRequest *)request error:(NSError *)error {
     request.error = error;
-//    JXCLog(@"Request %@ failed, status code = %ld, error = %@",
-//           NSStringFromClass([request class]), (long)request.responseStatusCode, error.localizedDescription);
-//    
+ 
     // Save incomplete download data.
     NSData *incompleteDownloadData = error.userInfo[NSURLSessionDownloadTaskResumeData];
     if (incompleteDownloadData) {
-//        [incompleteDownloadData writeToURL:[self incompleteDownloadTempPathForDownloadPath:request.resumableDownloadPath] atomically:YES];
+
     }
     
     // Load response from file and clean up if download task failed.
@@ -390,7 +384,7 @@
         [request requestFailedPreprocessor];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        //[request toggleAccessoriesWillStopCallBack];
+       
         [request requestFailedFilter];
         
         if (request.delegate != nil) {
@@ -399,7 +393,7 @@
         if (request.failureCompletionBlock) {
             request.failureCompletionBlock(request);
         }
-        //[request toggleAccessoriesDidStopCallBack];
+        
     });
 }
 
@@ -412,7 +406,6 @@
 - (void)removeRequestFromRecord:(JXCBaseRequest *)request {
     Lock();
     [_requestsRecord removeObjectForKey:@(request.requestTask.taskIdentifier)];
-    //JXCLog(@"Request queue size = %zd", [_requestsRecord count]);
     Unlock();
 }
 
@@ -449,126 +442,11 @@
     return dataTask;
 }
 
-- (NSURLSessionDownloadTask *)downloadTaskWithDownloadPath:(NSString *)downloadPath
-                                         requestSerializer:(AFHTTPRequestSerializer *)requestSerializer
-                                                 URLString:(NSString *)URLString
-                                                parameters:(id)parameters
-                                                  progress:(nullable void (^)(NSProgress *downloadProgress))downloadProgressBlock
-                                                     error:(NSError * _Nullable __autoreleasing *)error {
-    // add parameters to URL;
-    NSMutableURLRequest *urlRequest = [requestSerializer requestWithMethod:@"GET" URLString:URLString parameters:parameters error:error];
-    
-    NSString *downloadTargetPath;
-    BOOL isDirectory;
-    if(![[NSFileManager defaultManager] fileExistsAtPath:downloadPath isDirectory:&isDirectory]) {
-        isDirectory = NO;
-    }
-    // If targetPath is a directory, use the file name we got from the urlRequest.
-    // Make sure downloadTargetPath is always a file, not directory.
-    if (isDirectory) {
-        NSString *fileName = [urlRequest.URL lastPathComponent];
-        downloadTargetPath = [NSString pathWithComponents:@[downloadPath, fileName]];
-    } else {
-        downloadTargetPath = downloadPath;
-    }
-    
-    // AFN use `moveItemAtURL` to move downloaded file to target path,
-    // this method aborts the move attempt if a file already exist at the path.
-    // So we remove the exist file before we start the download task.
-    // https://github.com/AFNetworking/AFNetworking/issues/3775
-    if ([[NSFileManager defaultManager] fileExistsAtPath:downloadTargetPath]) {
-        [[NSFileManager defaultManager] removeItemAtPath:downloadTargetPath error:nil];
-    }
-    
-//    BOOL resumeDataFileExists = [[NSFileManager defaultManager] fileExistsAtPath:[self incompleteDownloadTempPathForDownloadPath:downloadPath].path];
-//    NSData *data = [NSData dataWithContentsOfURL:[self incompleteDownloadTempPathForDownloadPath:downloadPath]];
-//    BOOL resumeDataIsValid = [JXCNetworkUtils validateResumeData:data];
-//    
-//    BOOL canBeResumed = resumeDataFileExists && resumeDataIsValid;
-//    BOOL resumeSucceeded = NO;
-//    __block NSURLSessionDownloadTask *downloadTask = nil;
-//    // Try to resume with resumeData.
-//    // Even though we try to validate the resumeData, this may still fail and raise excecption.
-//    if (canBeResumed) {
-//        @try {
-//            downloadTask = [_manager downloadTaskWithResumeData:data progress:downloadProgressBlock destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-//                return [NSURL fileURLWithPath:downloadTargetPath isDirectory:NO];
-//            } completionHandler:
-//                            ^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-//                                [self handleRequestResult:downloadTask responseObject:filePath error:error];
-//                            }];
-//            resumeSucceeded = YES;
-//        } @catch (NSException *exception) {
-//            JXCLog(@"Resume download failed, reason = %@", exception.reason);
-//            resumeSucceeded = NO;
-//        }
-//    }
-//    if (!resumeSucceeded) {
-//        downloadTask = [_manager downloadTaskWithRequest:urlRequest progress:downloadProgressBlock destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-//            return [NSURL fileURLWithPath:downloadTargetPath isDirectory:NO];
-//        } completionHandler:
-//                        ^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-//                            [self handleRequestResult:downloadTask responseObject:filePath error:error];
-//                        }];
-//    }
-//    return downloadTask;
-    return nil;
-}
+
 
 #pragma mark - Resumable Download
 
-//- (NSString *)incompleteDownloadTempCacheFolder {
-//    NSFileManager *fileManager = [NSFileManager new];
-//    static NSString *cacheFolder;
-//    
-//    if (!cacheFolder) {
-//        NSString *cacheDir = NSTemporaryDirectory();
-//        cacheFolder = [cacheDir stringByAppendingPathComponent:kJXCNetworkIncompleteDownloadFolderName];
-//    }
-//    
-//    NSError *error = nil;
-//    if(![fileManager createDirectoryAtPath:cacheFolder withIntermediateDirectories:YES attributes:nil error:&error]) {
-//        JXCLog(@"Failed to create cache directory at %@", cacheFolder);
-//        cacheFolder = nil;
-//    }
-//    return cacheFolder;
-//}
-//
-//- (NSURL *)incompleteDownloadTempPathForDownloadPath:(NSString *)downloadPath {
-//    NSString *tempPath = nil;
-//    NSString *md5URLString = [JXCNetworkUtils md5StringFromString:downloadPath];
-//    tempPath = [[self incompleteDownloadTempCacheFolder] stringByAppendingPathComponent:md5URLString];
-//    return [NSURL fileURLWithPath:tempPath];
-//}
 
-
-
-//- (NSURLRequest *)generateRequestWithServiceIdentifier:(NSString *)serviceIdentifier
-//                                         requestParams:(NSDictionary *)requestParams
-//                                            methodName:(NSString *)methodName
-//                                     requestWithMethod:(NSString *)method {
-//    JXCNetworkDispatcherService *service = [[JXCNetworkDispatcherManager sharedInstance] serviceWithIdentifier:serviceIdentifier];
-//
-//    NSDictionary *totalRequestParams = [self totalRequestParamsByService:service requestParams:requestParams];
-//    
-//    NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:method URLString:urlString parameters:totalRequestParams error:NULL];
-//    
-//    if (![method isEqualToString:@"GET"] && [CTNetworkingConfigurationManager sharedInstance].shouldSetParamsInHTTPBodyButGET) {
-//        request.HTTPBody = [NSJSONSerialization dataWithJSONObject:requestParams options:0 error:NULL];
-//    }
-//    
-//    if ([service.child respondsToSelector:@selector(extraHttpHeadParmasWithParmas:)]) {
-//        NSDictionary *dict = [service.child extraHttpHeadParmasWithParmas:requestParams];
-//        if (dict) {
-//            [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-//                [request setValue:obj forHTTPHeaderField:key];
-//            }];
-//        }
-//    }
-//    
-//    request.requestParams = totalRequestParams;
-//    return request;
-//}
 
 
 #pragma mark - private method

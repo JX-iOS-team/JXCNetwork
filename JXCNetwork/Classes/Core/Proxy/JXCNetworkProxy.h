@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "JXCBaseRequest.h"
+
 
 
 NS_ASSUME_NONNULL_BEGIN

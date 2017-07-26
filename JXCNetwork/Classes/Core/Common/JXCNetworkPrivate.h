@@ -10,7 +10,7 @@
 #import "JXCRequest.h"
 #import "JXCBaseRequest.h"
 #import "JXCNetworkProxy.h"
-//#import "JXCNetworkConfig.h"
+
 
 
 

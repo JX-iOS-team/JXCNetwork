@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol JXCNetworkDispatcherServiceProtocol <NSObject>
+@protocol JXCNetworkDispatcherServiceDelegate <NSObject>
 
 @property (nonatomic, readonly) NSString *apiBaseUrl;
 
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *apiBaseUrl;
 @property (nonatomic, strong, readonly) NSString *apiVersion;
 
-@property (nonatomic, weak, readonly) id<JXCNetworkDispatcherServiceProtocol> child;
+@property (nonatomic, weak, readonly) id<JXCNetworkDispatcherServiceDelegate> child;
 
 
 @end

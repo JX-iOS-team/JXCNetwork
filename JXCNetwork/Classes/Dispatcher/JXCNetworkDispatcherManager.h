@@ -10,7 +10,7 @@
 #import "JXCNetworkDispatcherService.h"
 
 
-@protocol JXCNetworkDispatcherManagerDataSource <NSObject>
+@protocol JXCNetworkDispatcherManagerDelegate <NSObject>
 
 /*
  * key为service的Identifier
@@ -24,10 +24,10 @@
 @interface JXCNetworkDispatcherManager : NSObject
 
 
-@property (nonatomic, weak) id<JXCNetworkDispatcherManagerDataSource> dataSource;
+@property (nonatomic, weak) id<JXCNetworkDispatcherManagerDelegate> managerDelegate;
 
 + (instancetype)sharedInstance;
-- (JXCNetworkDispatcherService<JXCNetworkDispatcherServiceProtocol> *)serviceWithIdentifier:(NSString *)identifier;
+- (JXCNetworkDispatcherService<JXCNetworkDispatcherServiceDelegate> *)serviceWithIdentifier:(NSString *)identifier;
 
 
 @end

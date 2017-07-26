@@ -10,7 +10,7 @@
 
 @interface JXCNetworkDispatcherService()
 
-@property (nonatomic, weak, readwrite) id<JXCNetworkDispatcherServiceProtocol> child;
+@property (nonatomic, weak, readwrite) id<JXCNetworkDispatcherServiceDelegate> child;
 
 @end
 @implementation JXCNetworkDispatcherService
@@ -20,8 +20,8 @@
 {
     self = [super init];
     if (self) {
-        if ([self conformsToProtocol:@protocol(JXCNetworkDispatcherServiceProtocol)]) {
-            self.child = (id<JXCNetworkDispatcherServiceProtocol>)self;
+        if ([self conformsToProtocol:@protocol(JXCNetworkDispatcherServiceDelegate)]) {
+            self.child = (id<JXCNetworkDispatcherServiceDelegate>)self;
         }
     }
     return self;
