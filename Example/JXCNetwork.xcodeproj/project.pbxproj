@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C966D201F28428600839CD5 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C966D1F1F28428600839CD5 /* AFNetworking.framework */; };
 		291DE3147F28066E30CF4B8D /* Pods_JXCNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F921BD5FE6BFE51F0C532483 /* Pods_JXCNetwork_Tests.framework */; };
-		303D35B56510CC3F2AF2518A /* Pods_JXCNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D655EB2187044218577384D /* Pods_JXCNetwork_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
-		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* JXCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* JXCAppDelegate.m */; };
@@ -37,7 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		26D65767FDCDA558EEE46663 /* JXCNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = JXCNetwork.podspec; path = ../JXCNetwork.podspec; sourceTree = "<group>"; };
+		0C966D1F1F28428600839CD5 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		26D65767FDCDA558EEE46663 /* JXCNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JXCNetwork.podspec; path = ../JXCNetwork.podspec; sourceTree = "<group>"; };
 		34F1170EAB4AA19A7961880F /* Pods-JXCNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXCNetwork_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXCNetwork_Example/Pods-JXCNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5D655EB2187044218577384D /* Pods_JXCNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXCNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* JXCNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXCNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,9 +61,9 @@
 		613F08D5293DBB5371892236 /* Pods-JXCNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXCNetwork_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXCNetwork_Tests/Pods-JXCNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		66FB6FC59E8C6415B4E308DD /* Pods-JXCNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXCNetwork_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXCNetwork_Tests/Pods-JXCNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8668FD4A79EA1FA95567EBF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8668FD4A79EA1FA95567EBF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD2AF2DC67EA21A50F482247 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AD2AF2DC67EA21A50F482247 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C09FBB68A0A0C3497B78B948 /* Pods-JXCNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXCNetwork_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXCNetwork_Example/Pods-JXCNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F921BD5FE6BFE51F0C532483 /* Pods_JXCNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXCNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,10 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
-				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				0C966D201F28428600839CD5 /* AFNetworking.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				303D35B56510CC3F2AF2518A /* Pods_JXCNetwork_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +116,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C966D1F1F28428600839CD5 /* AFNetworking.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -352,10 +350,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JXCNetwork_Example/Pods-JXCNetwork_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/JXCNetwork/JXCNetwork.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXCNetwork.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +533,10 @@
 			baseConfigurationReference = C09FBB68A0A0C3497B78B948 /* Pods-JXCNetwork_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JXCNetwork/JXCNetwork-Prefix.pch";
 				INFOPLIST_FILE = "JXCNetwork/JXCNetwork-Info.plist";
@@ -548,6 +552,10 @@
 			baseConfigurationReference = 34F1170EAB4AA19A7961880F /* Pods-JXCNetwork_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JXCNetwork/JXCNetwork-Prefix.pch";
 				INFOPLIST_FILE = "JXCNetwork/JXCNetwork-Info.plist";

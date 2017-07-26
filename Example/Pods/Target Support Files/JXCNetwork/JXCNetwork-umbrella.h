@@ -10,6 +10,15 @@
 #endif
 #endif
 
+#import "NSString+RandomAndMd5.h"
+#import "JXCBaseRequest.h"
+#import "JXCNetworkPrivate.h"
+#import "JXCRequest.h"
+#import "JXCNetworkProxy.h"
+#import "JXCNetworkDispatcherManager.h"
+#import "JXCNetworkDispatcherService.h"
+#import "JXCNetwork.h"
+#import "JXCNetworkUtils.h"
 
 FOUNDATION_EXPORT double JXCNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char JXCNetworkVersionString[];

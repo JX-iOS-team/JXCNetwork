@@ -2,10 +2,11 @@ use_frameworks!
 
 target 'JXCNetwork_Example' do
   pod 'JXCNetwork', :path => '../'
-
+  pod 'AFNetworking', '~> 3.1'
+  
   target 'JXCNetwork_Tests' do
     inherit! :search_paths
 
-    
+
   end
 end
