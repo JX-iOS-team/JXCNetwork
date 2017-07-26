@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = 'JXCNetwork is a lightweight and high level request kit based on AFNetworking.'
 
   s.description      = <<-DESC
-JXCNetwork is a lightweight and high level request kit based on AFNetworking.
+JXCNetwork is a lightweight and high level request kit based on AFNetworking 3. Enjoy it!
                        DESC
 
   s.homepage         = 'https://github.com/JX-iOS-team/JXCNetwork'

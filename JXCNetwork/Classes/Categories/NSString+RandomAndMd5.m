@@ -12,7 +12,7 @@
 
 + (NSString *)randomString{
     NSInteger temstamp = [NSDate date].timeIntervalSince1970;
-    NSString *randomString = [NSString stringWithFormat:@"%ld%d", temstamp, arc4random() % 100];
+    NSString *randomString = [NSString stringWithFormat:@"%ld%d", (long)temstamp, arc4random() % 100];
     return randomString;
 }
 

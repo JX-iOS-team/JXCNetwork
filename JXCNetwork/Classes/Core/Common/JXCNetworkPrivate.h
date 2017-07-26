@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "JXCRequest.h"
+#import "JXCRequest.h"
 #import "JXCBaseRequest.h"
 #import "JXCNetworkProxy.h"
 //#import "JXCNetworkConfig.h"
@@ -16,7 +16,7 @@
 
 @interface JXCBaseRequest (Setter)
 
-@property (nonatomic, strong, readwrite) NSURLSessionTask *requestTask;
+@property (nonatomic, strong, readwrite, nullable) NSURLSessionTask *requestTask;
 @property (nonatomic, strong, readwrite, nullable) NSData *responseData;
 @property (nonatomic, strong, readwrite, nullable) id responseJSONObject;
 @property (nonatomic, strong, readwrite, nullable) id responseObject;
