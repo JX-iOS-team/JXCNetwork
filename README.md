@@ -22,7 +22,7 @@ pod "JXCNetwork"
 
 ## Author
 
-otnp50@hotmail.com
+[otnp50](otnp50@hotmail.com)
 
 ## License
 
