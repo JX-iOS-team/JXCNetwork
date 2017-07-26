@@ -16,7 +16,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-* [AFNetworking]
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 
 ## Installation
 
