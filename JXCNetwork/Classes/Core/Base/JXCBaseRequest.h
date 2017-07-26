@@ -236,8 +236,8 @@ typedef void(^JXCRequestCompletionBlock)(__kindof JXCBaseRequest *request);
 ///  Called on the main thread when request failed.
 - (void)requestFailedFilter;
 
-/// dispatcher name
-- (NSString *)serviceName;
+/// dispatcher service id
+- (NSString *)serviceIdentifier;
 
 ///  The baseURL of request. This should only contain the host part of URL, e.g., http://www.example.com.
 ///  See also `requestUrl`

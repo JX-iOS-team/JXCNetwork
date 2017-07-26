@@ -100,7 +100,7 @@
     if ([request baseUrl].length > 0) {
         baseUrl = [request baseUrl];
     } else {
-        JXCNetworkDispatcherService *service = [[JXCNetworkDispatcherManager sharedInstance] serviceWithIdentifier:request.serviceName];
+        JXCNetworkDispatcherService *service = [[JXCNetworkDispatcherManager sharedInstance] serviceWithIdentifier:request.serviceIdentifier];
         baseUrl = service.apiBaseUrl;
     }
     
@@ -144,7 +144,7 @@
     
     // dispatcher header value to HTTPHeaderField
     id requestParams = request.requestArgument;
-    JXCNetworkDispatcherService *service = [[JXCNetworkDispatcherManager sharedInstance] serviceWithIdentifier:request.serviceName];
+    JXCNetworkDispatcherService *service = [[JXCNetworkDispatcherManager sharedInstance] serviceWithIdentifier:request.serviceIdentifier];
     
     if ([service.child respondsToSelector:@selector(extraHttpHeadParmasWithParmas:)]) {
         NSDictionary *dict = [service.child extraHttpHeadParmasWithParmas:requestParams];

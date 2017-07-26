@@ -112,10 +112,12 @@ NSString *const JXCRequestValidationErrorDomain = @"com.jxssy.network.framework.
 - (NSString *)requestUrl {
     return @"";
 }
-/// dispatcher name
-- (NSString *)serviceName{
+
+/// dispatcher  service id
+- (NSString *)serviceIdentifier{
     return @"";
 }
+
 - (NSString *)baseUrl {
     return @"";
 }

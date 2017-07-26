@@ -35,7 +35,6 @@
 		6DF9F90BE91DA617BC53DC4015680118 /* JXCNetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9444BB0ED8A46CC8AB26C57D838E40 /* JXCNetworkUtils.m */; };
 		70A0B82F16AB1C0CE614A86C6CD41ECB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB7FF3305C3F3E726189CE6DC03B4A6 /* Foundation.framework */; };
 		720FA219D4F650814891861708D6C948 /* JXCBaseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 65DD3E45F33D59AA2CC5AF8FB8055784 /* JXCBaseRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73FA7F716F408CC318E5D759742811BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB7FF3305C3F3E726189CE6DC03B4A6 /* Foundation.framework */; };
 		7592E283E322D772AD0842C35BE6D9C6 /* NSString+RandomAndMd5.h in Headers */ = {isa = PBXBuildFile; fileRef = 0152C41DF08DB16D23EAD3BA745B5EC7 /* NSString+RandomAndMd5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A112C0F21A62CB6F1AA8D917A6EEA6C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C71DB2632AE2E107C12837E932A8E08 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CE16B1BF75DF396768A0A3CFD968DB1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A8DB58B1DEC0150E36AD843786FF3 /* UIWebView+AFNetworking.m */; };
@@ -202,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A3A4A9A079122112D06DF53B480C42 /* AFNetworking.framework in Frameworks */,
-				73FA7F716F408CC318E5D759742811BD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
