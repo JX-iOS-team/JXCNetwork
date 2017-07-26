@@ -8,7 +8,7 @@
 
 
 JXCNetwork is is a highwight and high level request framework based on AFNetworking. 
-JXCNetwork is a High Level API for network request.
+It is a High Level API for network request.
 
 ## Example
 
