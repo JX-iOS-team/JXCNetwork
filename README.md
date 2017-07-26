@@ -1,6 +1,6 @@
 # JXCNetwork
 
-[![CI Status](http://img.shields.io/travis/otnp50@hotmail.com/JXCNetwork.svg?style=flat)](https://travis-ci.org/otnp50@hotmail.com/JXCNetwork)
+[![CI Status](https://travis-ci.org/JX-iOS-team/JXCNetwork.svg?branch=master)](https://travis-ci.org/JX-iOS-team/JXCNetwork)
 [![Version](https://img.shields.io/cocoapods/v/JXCNetwork.svg?style=flat)](http://cocoapods.org/pods/JXCNetwork)
 [![License](https://img.shields.io/cocoapods/l/JXCNetwork.svg?style=flat)](http://cocoapods.org/pods/JXCNetwork)
 [![Platform](https://img.shields.io/cocoapods/p/JXCNetwork.svg?style=flat)](http://cocoapods.org/pods/JXCNetwork)
