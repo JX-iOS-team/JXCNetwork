@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JXCNetwork'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'JXCNetwork is a lightweight and high level request kit based on AFNetworking.'
 
   s.description      = <<-DESC

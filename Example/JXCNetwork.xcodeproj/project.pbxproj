@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C966D201F28428600839CD5 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C966D1F1F28428600839CD5 /* AFNetworking.framework */; };
+		28E9ACD36644018F411D16B8 /* Pods_JXCNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D655EB2187044218577384D /* Pods_JXCNetwork_Example.framework */; };
 		291DE3147F28066E30CF4B8D /* Pods_JXCNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F921BD5FE6BFE51F0C532483 /* Pods_JXCNetwork_Tests.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
@@ -73,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C966D201F28428600839CD5 /* AFNetworking.framework in Frameworks */,
+				28E9ACD36644018F411D16B8 /* Pods_JXCNetwork_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
