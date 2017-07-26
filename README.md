@@ -22,7 +22,7 @@ pod "JXCNetwork"
 
 ## Author
 
-otnp50@hotmail.com, renpeng@jxfls.com
+otnp50@hotmail.com
 
 ## License
 

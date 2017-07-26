@@ -1,0 +1,22 @@
+{
+  "name": "JXCNetwork",
+  "version": "0.1.0",
+  "summary": "A short description of JXCNetwork.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/otnp50@hotmail.com/JXCNetwork",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "otnp50@hotmail.com": "renpeng@jxfls.com"
+  },
+  "source": {
+    "git": "https://github.com/otnp50@hotmail.com/JXCNetwork.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JXCNetwork/Classes/**/*"
+}
