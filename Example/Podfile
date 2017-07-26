@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JXCNetwork_Example' do
+  pod 'JXCNetwork', :path => '../'
+
+  target 'JXCNetwork_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
