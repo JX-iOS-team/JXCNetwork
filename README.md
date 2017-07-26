@@ -5,6 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/JXCNetwork.svg?style=flat)](http://cocoapods.org/pods/JXCNetwork)
 [![Platform](https://img.shields.io/cocoapods/p/JXCNetwork.svg?style=flat)](http://cocoapods.org/pods/JXCNetwork)
 
+
+
+JXCNetwork is is a highwight and high level request framework based on AFNetworking. 
+JXCNetwork is a High Level API for network request.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

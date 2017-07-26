@@ -1,9 +1,14 @@
 #
-# Be sure to run `pod lib lint JXCNetwork.podspec' to ensure this is a
+# Be sure to run
+# `pod lib lint JXCNetwork.podspec`
+#  to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+# 
+# push :
+# `pod trunk push JXCNetwork.podspec`
 #
 
 Pod::Spec.new do |s|
@@ -12,7 +17,7 @@ Pod::Spec.new do |s|
   s.summary          = 'JXCNetwork is a lightweight and high level request kit based on AFNetworking.'
 
   s.description      = <<-DESC
-JXCNetwork is a lightweight and high level request kit based on AFNetworking 3. Enjoy it!
+            JXCNetwork is a lightweight and high level request kit based on AFNetworking 3.x, Enjoy it!
                        DESC
 
   s.homepage         = 'https://github.com/JX-iOS-team/JXCNetwork'
