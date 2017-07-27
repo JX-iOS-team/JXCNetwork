@@ -11,8 +11,10 @@ JXCNetwork is is a highwight and high level request framework based on AFNetwork
 It is a High Level API for network request.
 
 ## Example
-
+### 0.1.x
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+### 0.2 +
+...
 
 ## Requirements
 
